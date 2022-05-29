@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include <stdexcept>
+#include <climits>
 
 using namespace std;
 
@@ -57,15 +57,30 @@ double multiplication(){
 }
 
 double division(){
-	DIV:
+	
 //INPUT NUMBER TO BE CALCULATED	
+	
 	double first_number{input_number()};
+	DIV:
 	double second_number{input_number()};
 	double calculation_result;
 	
-	if (second_number == 0){
-		throw runtime_error("Math error: Attempted to divide by Zero\n");
+	try {
+		if (second_number == 0){
+//		throw runtime_error("Math error: Attempted to divide by Zero\n");
+		cout << endl << "Math error: Attempted to divide by Zero" <<endl;
+			
+		throw(second_number);
+		
+		}
 	}
+	catch(double denominator){
+		cout << endl << "The denominator is: " << denominator << endl;
+		cout << "Please input the new second number" <<endl;
+		goto DIV;
+	}
+	
+
 	
 // DO MATH OPERATION
 	calculation_result = first_number / second_number;
@@ -90,9 +105,12 @@ double modulo(){
 	cout <<"Calculation result: " << rounded_first << " mod " << rounded_second << " = " << calculation_result;
 
 }
+
+
 int main(){
 	char continue_key;
 	int option;
+	
 	
 	cout << "PILIH OPERATOR ARITMATIKA"<<endl;
 	cout << "1. Penjumlahan" << endl;
@@ -106,8 +124,13 @@ int main(){
 	cout << "Select operation: ";
 	cin >> option;
 	
-	if(option==)
-
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(INT_MAX, '\n');
+		cout<<endl;
+		cout<<"Selector only accept integer number (1-9)"<<endl;
+		goto START; 	
+	}
 	
 	switch(option){
 	        case 1 : 
