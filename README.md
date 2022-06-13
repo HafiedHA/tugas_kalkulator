@@ -12,9 +12,9 @@
      -  Create public object and method
      -  Error handling
      -  Checking code
-  2. Contributor 2
-     -  Do what
-     -  Do what
+  2. Reyhan Ihza Reangga 17/413918/TK/46358 - [GitHub](https://github.com/reyhanihza)
+     -  Adding trigonometry function
+     -  Cheking code
   3. Contributor 3
      -  Do what
 
